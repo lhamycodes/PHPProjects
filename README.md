@@ -1,4 +1,4 @@
-#Login Script
+# Login Script #
 
 Hello there,
 This project helps login and authentication easier,
