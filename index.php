@@ -2,8 +2,6 @@
     session_start();
     $success = null;
     $failed = null;
-    $type = "";
-    $message = "";
     $dbHost = "localhost";
     $dbUser = "root";
     $dbPass = "";
@@ -43,26 +41,28 @@
                                     while($row = mysqli_fetch_row($query)){
                                         $userFullName = $row[1];
                                     }
-                                    $success = "Login Successful, Welcome @ $userFullname";
+                                    $success = "Login Successful, Welcome @$userFullname";
                                 }
                             }
-                            if(isset($success)){
-                                $type = "primary";
-                                $message = $success;
-                            }
-                            else if (isset($failed))
-                            {
-                                $type = "danger";
-                                $message = $failed;
-                            }
-                            $output =  '<div class="alert alert-dismissible alert-'.$type.'">
-                                            '.$message.'
+                            if(isset($success) || (isset($failed))){
+                                if($success){
+                                    $type = "primary";
+                                    $message = $success;
+                                }
+                                else if ($failed)
+                                {
+                                    $type = "danger";
+                                    $message = $failed;
+                                }
+                                $output =  "<div class='alert alert-dismissible alert-$type'>
+                                                $message
 
-                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>';
-                            echo $output;
+                                                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                                                    <span aria-hidden='true'>&times;</span>
+                                                </button>
+                                            </div>";
+                                echo $output;
+                            }
                         ?>
 
                         <div class="card-body py-3">
