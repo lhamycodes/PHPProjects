@@ -10,9 +10,10 @@ Basically, it accepts
 ```
 Which is sent to the SERVER Controlling Script
 Parameters sent to the server are
+```
 - usernameParam and
 - passwordParam.
-
+```
 Import the sql database file name lhamycodesdb.sql
 and populate it with values by running the user populator script named script.php on your local server environment..
 You can easily clone this project via this [link] ( https://github.com/lhamycodes/PHPProjects.git ) 
