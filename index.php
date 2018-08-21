@@ -7,6 +7,7 @@
     $dbPass = "";
     $dbName = "lhamycodesdb";
     $tblName = "login";
+    $connect = mysqli_connect($dbHost, $dbUser, $dbPass, $dbName);
 ?>
 <!doctype html>
 <html lang="en">
@@ -31,7 +32,7 @@
                             <?php
                                 if(isset($_POST['usernameParam'])){
                                     extract($_POST);
-                                    $connect = mysqli_connect($dbHost, $dbUser, $dbPass, $dbName);
+                                    $passwordParam = md5($passwordParam);
                                     $query = mysqli_query($connect, "SELECT * FROM `$tblName` WHERE `username` = '$usernameParam' AND `password` = '$passwordParam'");
                                     if(mysqli_num_rows($query) < 1){
                                         $failed = "Username / Password Mismatch..";
@@ -56,17 +57,9 @@
                                     }
                                     $output =  "<div class='alert alert-dismissible alert-$type'>
                                                     $message
-
-                                                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-                                                        <span aria-hidden='true'>&times;</span>
-                                                    </button>
                                                 </div>";
 
                                     echo $output;
-                                    ?>
-                                        <script type="text/javascript">
-                                        </script>
-                                    <?php
                                 }
                             ?>
 
@@ -102,5 +95,4 @@
         </div>
     </div>
 </body>
-<script src="jquery.min.js"></script>
 </html>
