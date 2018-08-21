@@ -16,6 +16,10 @@
             'password' => "blessy4christ"
         ]
     );
-
-    print_r($userArray);
+    
+    for($i = 0; $i < count($userArray); $i++){
+        $handle = $userArray[$i]['gitHandle'];
+        $username = $userArray[$i]['username'];
+        $password = $userArray[$i]['password'];
+    }
 ?>
