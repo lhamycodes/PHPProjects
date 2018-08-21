@@ -7,11 +7,23 @@
     $connect = mysqli_connect($dbHost, $dbUser, $dbPass, $dbName);    
 
     // You too can add your users by adding them to this array following the format below
+    // $userArray = array(
+    //     [
+    //         'gitHandle' => "@gitHandle1",
+    //         'username' => "username1",
+    //         'password' => "password1"
+    //     ],
+    //     [
+    //         'gitHandle' => "@gitHandle2",
+    //         'username' => "username2",
+    //         'password' => "password2"
+    //     ]
+    // );
     $userArray = array(
         [
             'gitHandle' => "@lhamycodes",
             'username' => "dayjeerow7",
-            'password' => "iamlhamide"
+            'password' => "iamdayjeerow"
         ],
         [
             'gitHandle' => "@jsdev",
