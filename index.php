@@ -2,6 +2,8 @@
     session_start();
     $success = null;
     $failed = null;
+    $type = "";
+    $message = "";
     $dbHost = "localhost";
     $dbUser = "root";
     $dbPass = "";
